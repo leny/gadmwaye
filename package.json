@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "A modern rewrite of github-secret-keeper",
   "main": "bin/index.js",
-  "scripts": {},
+  "scripts": {
+    "lint": "npx eslint --fix --cache src",
+    "build": "npx babel src --out-dir bin"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leny/gadmwaye.git"
@@ -15,6 +18,10 @@
   },
   "homepage": "https://github.com/leny/gadmwaye#readme",
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
     "@becode/eslint-config": "^0.4.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
@@ -26,6 +33,10 @@
     "prettier": "^1.17.1"
   },
   "lint-staged": {
+    "*.json": [
+      "npx prettier --write",
+      "git add"
+    ],
     "*.js": [
       "npx eslint --fix --cache",
       "git add"
@@ -35,5 +46,8 @@
     "hooks": {
       "pre-commit": "npx lint-staged"
     }
+  },
+  "dependencies": {
+    "core-js": "^3.0.1"
   }
 }
