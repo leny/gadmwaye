@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "A modern rewrite of github-secret-keeper",
   "main": "bin/index.js",
+  "files": [
+    "bin"
+  ],
   "scripts": {
     "lint": "npx eslint --fix --cache src",
     "build": "npx babel src --out-dir bin",
