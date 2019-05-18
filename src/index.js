@@ -6,5 +6,6 @@
  * started at 17/05/2019
  */
 
-// eslint-disable-next-line no-console
-console.log("hello, world!");
+export default (request, response) => {
+    response.end("Hello, west!");
+};

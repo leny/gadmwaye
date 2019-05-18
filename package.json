@@ -5,7 +5,10 @@
   "main": "bin/index.js",
   "scripts": {
     "lint": "npx eslint --fix --cache src",
-    "build": "npx babel src --out-dir bin"
+    "build": "npx babel src --out-dir bin",
+    "work": "npx babel src -s --watch --verbose --out-dir bin",
+    "start": "micro",
+    "dev": "micro-dev"
   },
   "repository": {
     "type": "git",
@@ -30,6 +33,7 @@
     "eslint-plugin-unicorn": "^8.0.2",
     "husky": "^2.3.0",
     "lint-staged": "^8.1.7",
+    "micro-dev": "^3.0.0",
     "prettier": "^1.17.1"
   },
   "lint-staged": {
@@ -48,6 +52,8 @@
     }
   },
   "dependencies": {
-    "core-js": "^3.0.1"
+    "core-js": "^3.0.1",
+    "got": "^9.6.0",
+    "micro": "^9.3.4"
   }
 }
